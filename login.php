@@ -1,37 +1,28 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>template</title>
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Aclonica">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Acme">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Actor">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Adamina">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Aldrich">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alfa+Slab+One">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alike">
-    <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
-    <link rel="stylesheet" href="assets/css/Login-Form-Clean.css">
-    <link rel="stylesheet" href="assets/css/Navigation-Clean.css">
-    <link rel="stylesheet" href="assets/css/styles.css">
-</head>
-
-<body style="height: 433px;">
-    <div class="login-clean" style="height: 599px;">
-        <form class="text-center bg-light border rounded shadow" method="post" style="width: 328px;height: 451px;" action="login_sql.php">
-            <h2 class="sr-only">Login Form</h2>
-            <div class="illustration" style="margin-top: -37px;"><i class="icon ion-ios-navigate-outline"></i></div>
-            <div class="form-group"><input class="form-control" type="email" name="email" placeholder="Email"></div>
-            <div class="form-group"><input class="form-control" type="password" name="password" placeholder="Mot de passe"></div><input type="checkbox" name="conect_auto" style="margin-left: -176px;"><small class="form-text text-muted" style="margin-top: -23px;">Connexion automatique ?</small>
-            <div
-                class="form-group"><button class="btn btn-primary btn-block border rounded shadow" type="submit">Se connecter</button></div><a class="forgot" href="#" style="width: 286px;margin-left: -17px;">Vous avez oublié votre mail ou votre mot de passe ?</a></form>
-    </div>
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-</body>
-
-</html>
+<?php 
+    if (isset($_COOKIE['email']) AND isset($_COOKIE['pseudo']) AND isset($_COOKIE['id']) AND isset($_COOKIE['avatar']) AND isset($_COOKIE['connect_auto']))
+    {
+        echo $_COOKIE['connect_auto'];
+        if ($_COOKIE['connect_auto'] == 1)
+        {
+            $_SESSION['email'] = $_COOKIE['email'];
+            $_SESSION['pseudo'] = $_COOKIE['pseudo'];
+            $_SESSION['id'] = $_COOKIE['id'];
+            $_SESSION['avatar'] = $_COOKIE['avatar'];
+            $_SESSION['connect_auto'] = $_COOKIE['connect_auto'];
+            
+            // header('Location: account.php');
+        }
+        else 
+        {
+            ?> 
+                <?php include('login_table.php') ?>
+            <?php 
+        }
+    }
+    else 
+    {
+        ?>
+            <?php include('login_table.php') ?>
+        <?php
+    }
+?>

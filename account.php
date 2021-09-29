@@ -1,10 +1,15 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html>
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>template</title>
+    <title>Loris Member's</title>
+    <link rel="shortcut icon" type="image/png" href="assets/imgs/favicon.png" />
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Aclonica">
@@ -22,16 +27,27 @@
 
 <body>
     <nav class="navbar navbar-light navbar-expand-md navigation-clean">
-        <div class="container"><a class="navbar-brand" href="#">Loris Member's™<br></a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse"
-                id="navcol-1">
+        <?php 
+            if (isset($_SESSION['avatar']))
+            {
+                $image_avatar = $_SESSION['avatar'];
+
+                ?>
+                    <div>
+                        <img style="width: 50px; height: 50px; margin-left: 50px" src="<?= ucfirst(htmlentities("uploads/$image_avatar")); ?>"/>
+                    </div>
+                <?php
+            }
+        ?>
+        <div class="container"><a class="navbar-brand" href="index.php">Loris Member's™<br></a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-1">
                 <ul class="nav navbar-nav ml-auto">
-                    <li class="nav-item" role="presentation"><a class="nav-link active" href="#">First Item</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="#">Second Item</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="my_informations.php">Mes informations</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="list_members.php">Liste des membres</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="#">Third Item</a></li>
-                    <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#">Dropdown </a>
-                        <div class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" href="#">First Item</a><a class="dropdown-item" role="presentation" href="#">Second Item</a><a class="dropdown-item" role="presentation" href="#">Third Item</a></div>
-                    </li>
+                    <a class="btn btn-light action-button" role="button" href="deconnection.php" style="border-radius: 70px; background-color: rgb(205,62,88); color: aliceblue;">
+                        Se déconnecter
+                    </a>
                 </ul>
             </div>
         </div>
