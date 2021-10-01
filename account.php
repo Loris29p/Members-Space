@@ -3,7 +3,7 @@
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
@@ -22,7 +22,6 @@
     <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
     <link rel="stylesheet" href="assets/css/Login-Form-Clean.css">
     <link rel="stylesheet" href="assets/css/Navigation-Clean.css">
-    <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 
 <body>
@@ -34,7 +33,7 @@
 
                 ?>
                     <div>
-                        <img style="width: 50px; height: 50px; margin-left: 50px" src="<?= ucfirst(htmlentities("uploads/$image_avatar")); ?>"/>
+                        <img alt="Avatar" style="width: 50px; height: 50px; margin-left: 50px" src="<?= ucfirst(htmlentities("uploads/$image_avatar")); ?>"/>
                     </div>
                 <?php
             }
@@ -45,9 +44,7 @@
                     <li class="nav-item" role="presentation"><a class="nav-link" href="my_informations.php">Mes informations</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="list_members.php">Liste des membres</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="#">Third Item</a></li>
-                    <a class="btn btn-light action-button" role="button" href="deconnection.php" style="border-radius: 70px; background-color: rgb(205,62,88); color: aliceblue;">
-                        Se déconnecter
-                    </a>
+                    <a class="btn btn-light action-button" role="button" href="deconnection.php" style="border-radius: 70px; background-color: rgb(205,62,88); color: aliceblue;">Se déconnecter</a>
                 </ul>
             </div>
         </div>

@@ -4,6 +4,7 @@
 }
 
 .user-item div.user-container {
+  margin-left: 70px;
   text-align: left;
   font: normal 14px sans-serif;
   background-color: #f4f8fa;

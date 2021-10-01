@@ -3,7 +3,7 @@
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
@@ -12,7 +12,6 @@
     <link rel="shortcut icon" type="image/png" href="assets/imgs/favicon.png" />
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/Navigation-with-Button.css">
-    <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="assets/css/Header-Dark.css">
     <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
     <link rel="stylesheet" href="assets/css/Pretty-Footer.css">
